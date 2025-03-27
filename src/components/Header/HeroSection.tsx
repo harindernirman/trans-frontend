@@ -2,7 +2,8 @@
 import { useRef, useState, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
-import NavigationSection from "./NavigationSection";
+import { NavigationSection } from "./NavigationSection";
+import { NavSheet } from "./NavSheet";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -61,11 +62,11 @@ export default function HeroSection() {
       </video>
 
       {/* Overlay */}
-``
+
       {/* Logo */}
       <div
         className={`bg-[transparent]  
-         ${header ? "fixed w-full  bg-black z-10 " : "bg-[transparent]"}`}
+         ${header ? "fixed w-full  bg-black z-100 " : "bg-[transparent]"}`}
       >
         <div className=" relative mx-auto max-w-screen-xl items-center justify-between flex p-6">
           <div>
@@ -73,14 +74,18 @@ export default function HeroSection() {
           </div>
           <div className="flex gap-16">
             <NavigationSection />
+            {/* <Navbar/> */}
 
             <button className="rounded-full bg-red-400 px-4  font-medium text-primary-foreground transition-colors hover:bg-primary/90">
               Call to Action
             </button>
           </div>
+
+          <button className="md:hidden">
+            <NavSheet />
+          </button>
         </div>
       </div>
-      {/* Navigation */}
 
       {/* Hero Content */}
       <div className="relative flex h-full flex-col items-center justify-center  text-center text-white">
