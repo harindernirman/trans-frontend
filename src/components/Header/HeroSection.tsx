@@ -4,6 +4,7 @@ import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 import { NavigationSection } from "./NavigationSection";
 import { NavSheet } from "./NavSheet";
+import { WordRotate } from "../magicui/word-rotate";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -45,7 +46,7 @@ export default function HeroSection() {
   });
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden ">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -81,22 +82,25 @@ export default function HeroSection() {
             </button>
           </div>
 
-          <button className="md:hidden">
+          <div className="md:hidden">
             <NavSheet />
-          </button>
+          </div>
         </div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative flex h-full flex-col items-center justify-center  text-center text-white">
+      <div className="relative flex h-full flex-col items-center justify-center text-center text-white">
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-          Welcome to Our World
+          Coverage for <br /> 
         </h1>
-        <p className="mb-8 max-w-2xl text-lg md:text-xl">
-          Discover amazing experiences and unforgettable moments with us.
+        <p className="mb-8 max-w-2xl text-lg md:text-4xl">
+        <WordRotate
+      className="text-4xl font-bold text-White dark:text-white"
+      words={["Today", "Tomorrow", "Forever"]}
+    />
         </p>
-        <button className="rounded-full bg-primary px-8 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90">
-          Get Started
+        <button className="rounded-full bg-red-400 px-8 cursor-pointer py-3 font-medium text-primary-foreground transition-colors hover:bg-transparent hover:text-white">
+        Request a Quote 
         </button>
       </div>
 
